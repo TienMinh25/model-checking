@@ -1,6 +1,7 @@
 \documentclass[a4paper,12pt]{article}
 \usepackage{graphicx}
 \usepackage{amsmath}
+\usepackage{enumerate}
 
 \begin{document}
 
@@ -24,11 +25,11 @@ Let the transition system $TS_1$ be as follows.
     \includegraphics[width=0.7\textwidth]{mc-exercise-1.png}
 \end{figure}
 
-(a) Give the formal definition of $TS_1$
-
-(b) Specify a finite and an infinite execution of $TS_1$
-
-(c) Decide whether $TS_1$ is (i) AP-deterministic, and/or (ii) action-deterministic. Justify your answer.
+\begin{enumerate}[(a)]
+    \item Give the formal definition of $TS_1$
+    \item Specify a finite and an infinite execution of $TS_1$
+    \item Decide whether $TS_1$ is (i) AP-deterministic, and/or (ii) action-deterministic. Justify your answer.
+\end{enumerate}
 
 \begin{center}
     \bfseries Solution
@@ -243,5 +244,81 @@ Because $\left|S_0\right| = 1 \implies \left|S_0\right| \leq 1 = True$ (3)
 \end{itemize}
 
 \section{Exercise 2}
-Consider the following sequential hardware circuit in C 
+Consider the following sequential hardware circuit in C.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\textwidth]{mc-exercise-2.png}
+\end{figure}
+
+\begin{enumerate}[(a)]
+    \item Give the function $\lambda_y$, $\delta_{r1}$ and $\delta_{r2}$ that govern the changes to the output and register bits depending on the
+input bits.
+    \item Formally specify the state space of the transition system TS for the circuit C. Justify your answer.
+    \item Draw the transition system TS for the circuit C using the set of labels $AP = \{x, r_1, r_2, y\}$ assuming
+that initially the values of the registers are 0. Make sure that \textbf{all formal components} of the
+transition system can be uniquely identified from your picture.
+    \item Determine the set $Reach(TS)$.
+\end{enumerate}
+
+\begin{center}
+    \bfseries{Solution}
+\end{center}
+
+
+
+\section{Exercise 3*}
+Consider the following mutual exclusion algorithm for two processes $P_0$ and $P_1$.\\
+The pseudo code of the algorithm for process $P_i$ is given as
+\[
+\begin{aligned}
+    &\quad\text{int k := 0;} \\
+    &\quad\text{b := [true, true];} \\
+    \ell_0 &\left\{
+        \begin{aligned}
+            & \text{while (true) do} \\
+            & \quad b[i] := \mathit{false};
+        \end{aligned}
+    \right. \\
+    \ell_1 &\left\{
+        \begin{aligned}
+            & \quad\text{while (k != i) do}
+        \end{aligned}
+    \right. \\
+    \ell_2 &\left\{
+        \begin{aligned}
+            & \qquad\text{while (not b[1-i]) do} \\
+            & \qquad\quad \text{k := } i\text{;} \\
+            & \qquad\text{end}
+        \end{aligned}
+    \right. \\
+    &\qquad\text{end} \\
+    \ell_3 &\left\{
+        \begin{aligned}
+            & \quad\text{critical\_section;}
+        \end{aligned}
+    \right. \\
+    \ell_4 &\left\{
+        \begin{aligned}
+            & \quad\text{b}[i] := \text{true;}
+        \end{aligned}
+    \right. \\
+    &\quad\text{end} %
+\end{aligned}
+\]
+
+where b is an array of two Boolean values which are initially true. k is a variable which is either 0 or 1, and
+initially 0.
+
+\begin{enumerate}[(a)]
+    \item Give the program graph representation for a single process. Use the locations $\ell_0, \dots \ell_4$ corresponding to the indicated program fragments.
+
+    \item Give the reachable part of the transition system of $P_0 ||| P_1$, i.e., $\text{TS}(P_0 ||| P_1)$, over the state space $\langle \ell_i, \ell_j, k, b[0], b[1] \rangle$.\\
+    \textit{Hint:} If you wish, you may treat the states $\langle \ell_i, \ell_j, 0, b[0], b[1] \rangle$ and \\$\langle \ell_j, \ell_i, 1, b[1], b[0] \rangle$ to be equivalent. 
+    In other words, whenever you encounter a transition to a state with $k = 1$, you may swap the locations of the processes $P_0$ and $P_1$, 
+    swap the values of $b[0]$ and $b[1]$, set $k$ to 0, and make the transition target this ``new'' state instead. This operation considerably reduces the size of the resulting state space.
+
+    \item Check whether the algorithm ensures mutual exclusion, i.e., both processes are never in their critical section at the same time. Justify your answer.
+
+    \item Does the algorithm guarantee that every process eventually enters its critical section? Justify your answer.
+\end{enumerate}
 \end{document}
