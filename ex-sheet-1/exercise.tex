@@ -2,6 +2,8 @@
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{enumerate}
+\usepackage{tikz-cd}
+\usetikzlibrary{automata, positioning, arrows.meta}
 
 \begin{document}
 
@@ -263,6 +265,83 @@ transition system can be uniquely identified from your picture.
 \begin{center}
     \bfseries{Solution}
 \end{center}
+
+\begin{enumerate}[(a)]
+    \item Based on the sequential hardware circuit in C, we have these functions:
+    \[
+    \begin{aligned}
+        &\lambda_y = r_1 \land r_2 \\
+        &\delta_{r_1} = (x \land \lnot r_1) \lor (r_1 \land \lnot x) = x \oplus r_1 \\
+        &\delta_{r_2} = (\lnot x \land r_2) \lor (x \land r_1)
+    \end{aligned}
+    \]
+    \item The state space of transition system TS:
+    
+    State Space: $S = Eval(x) \times Eval(r_1) \times Eval(r_2)$ (1)
+
+    $Eval(x) = Eval(r_1) = Eval(r_2) = \{0, 1\}$ (2)
+
+    (1), (2) we conclude:
+    \[
+    \begin{aligned}
+        S = \{(0, 0, 0), &(0,0,1), (0, 1, 0), (0, 1, 1), (1, 0, 0), \\
+                &(1, 0, 1), (1, 1, 0), (1, 1, 1)\} 
+    \end{aligned}
+    \]
+    \item The transition system of hardware circuit in C as following:
+    \begin{center}
+        \begin{tikzpicture}[
+            shorten >= 1pt, auto,
+            state_box/.style={
+                rectangle, 
+                rounded corners,    
+                draw=black,            
+                thick,                 
+                minimum width=3.5cm,   
+                minimum height=1cm,
+                align=center,          
+                fill=blue!5     
+            }
+        ]
+            \node[state_box] (1) at (0,0)  {$x = 0, r_1 = 0, r_2 = 0$};
+            \node[state_box] (2) at (0,-2) {$x = 0, r_1 = 0, r_2 = 1$};
+            \node[state_box] (3) at (0,-4) {$x = 0, r_1 = 1, r_2 = 0$};
+            \node[state_box] (4) at (0,-6) {$x = 0, r_1 = 1, r_2 = 1$};
+
+            \node[state_box] (5) at (6,0)  {$x = 1, r_1 = 0, r_2 = 0$};
+            \node[state_box] (6) at (6,-2) {$x = 1, r_1 = 0, r_2 = 1$};
+            \node[state_box] (7) at (6,-4) {$x = 1, r_1 = 1, r_2 = 0$};
+            \node[state_box] (8) at (6,-6) {$x = 1, r_1 = 1, r_2 = 1$};
+
+            \draw[->, thick] (1,1) -- (1);
+            \draw[->, thick] (7,1) -- (5);
+
+            \path[->] (1) edge (5)
+                        edge [loop above] (1)
+                    (5) edge [bend right=15] (3)
+                        edge [bend left=15] (7)
+                    (2) edge [loop above] (2)
+                        edge (6)
+                    (6) edge [bend right=15] (3)
+                        edge (7)
+                    (3) edge [loop below] (3)
+                        edge (7)
+                    (7) edge [bend left=30] (2)
+                        edge [bend right=50] (6)
+                    (4) edge [loop below] (4)
+                        edge (8)
+                    (8) edge [bend left=45] (2)
+                        edge [bend left=30](6);
+        \end{tikzpicture}
+    \end{center}
+
+    \item Based on the graph of TS in (c), the $Reach(TS)$ as below:
+    \[
+    \begin{aligned}
+        Reach(TS) = \{(0,0,0), &(1,0,0), (0,0,1), (1,0,1),(0,1,0), (1,1,0)\}
+    \end{aligned}
+    \] 
+\end{enumerate}
 
 
 
