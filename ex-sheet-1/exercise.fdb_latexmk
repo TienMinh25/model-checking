@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1779537476.57234 "c:/tienminh/model-checking/ex-sheet-1/exercise.tex" "exercise.pdf" "exercise" 1779537477.31231 0
+["pdflatex"] 1780333605.54754 "c:/tienminh/model-checking/ex-sheet-1/exercise.tex" "exercise.pdf" "exercise" 1780333606.31172 0
   "c:/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1778946468 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "c:/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1778948100 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2026/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1778917642 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
@@ -128,9 +128,11 @@
   "c:/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1778958672 5619402 ad1310ccf7f36101ef3e8f014a173c46 ""
   "c:/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt" 1778917882 2295876 e83bcdb5ec8b1275e02f3dcccbcd144d ""
   "c:/texlive/2026/texmf.cnf" 1778917873 801 6cf47d2d13f745ab1c54e1f0356eb32c ""
-  "c:/tienminh/model-checking/ex-sheet-1/exercise.tex" 1779537476 16549 53017962b107da9ed53f9c45bce7d872 ""
-  "exercise.aux" 1779537477 327 468d8c8adce66ed3d07f4a1a5638a321 "pdflatex"
-  "exercise.tex" 1779537476 16549 53017962b107da9ed53f9c45bce7d872 ""
+  "c:/tienminh/model-checking/ex-sheet-1/exercise.tex" 1780333605 19275 52731fa892870adc07e33c8d5105adea ""
+  "ex3-pg-composition.jpeg" 1780331338 57120 a0600e5b92837bb5de646e2097cca60b ""
+  "ex3-ts.jpeg" 1780332621 83003 66fa70bc2994d153344877e401dc7aa9 ""
+  "exercise.aux" 1780333606 328 54739f5b328ce1d12b69dd4413dbc3b2 "pdflatex"
+  "exercise.tex" 1780333605 19275 52731fa892870adc07e33c8d5105adea ""
   "mc-exercise-1.png" 1778945450 15285 2278770db9e292144f9b4ae73e857cbe ""
   "mc-exercise-2.png" 1779003072 14314 0473bb5c14fb88d3930c4757fb990b1b ""
   (generated)

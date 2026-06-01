@@ -211,6 +211,16 @@ INPUT ./mc-exercise-2.png
 INPUT c:/texlive/2026/texmf-dist/fonts/tfm/public/cm/cmti12.tfm
 INPUT c:/texlive/2026/texmf-dist/fonts/tfm/public/cm/cmti8.tfm
 INPUT c:/texlive/2026/texmf-dist/fonts/tfm/public/cm/cmti7.tfm
+INPUT ./ex3-pg-composition.jpeg
+INPUT ./ex3-pg-composition.jpeg
+INPUT ./ex3-pg-composition.jpeg
+INPUT ./ex3-pg-composition.jpeg
+INPUT ./ex3-pg-composition.jpeg
+INPUT ./ex3-ts.jpeg
+INPUT ./ex3-ts.jpeg
+INPUT ./ex3-ts.jpeg
+INPUT ./ex3-ts.jpeg
+INPUT ./ex3-ts.jpeg
 INPUT exercise.aux
 INPUT c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
